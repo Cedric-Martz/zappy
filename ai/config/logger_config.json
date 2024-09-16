@@ -1,0 +1,50 @@
+{
+    "colored": true,
+    "timestamped": false,
+    "timestamp_format": "%Y-%m-%d %H:%M:%S ",
+    "disabled": false,
+    "display_uuid": false,
+    "filename_uuid": false,
+    "loggers": [
+        {
+            "ID": "error",
+            "channel": "stderr",
+            "color": "RED",
+            "filepath": "logs/error.log",
+            "mode": "a",
+            "disabled": false
+        },
+        {
+            "ID": "goal_selected",
+            "color": "GREEN"
+        },
+        {
+            "ID": "connected",
+            "color": "BACK_GREEN"
+        },
+        {
+            "ID": "executing_action",
+            "color": "BACK_CYAN"
+        },
+        {
+            "ID": "comm_to_server",
+            "color": "BLUE"
+        },
+        {
+            "ID": "comm_from_server",
+            "color": "MAGENTA"
+        },
+        {
+            "ID": "broadcast_info",
+            "filepath": "logs/broadcast_info.log"
+        },
+        {
+            "ID": "info",
+            "color": "YELLOW"
+        },
+        {
+            "ID": "evil",
+            "color": "BACK_RED"
+        }
+    ]
+}

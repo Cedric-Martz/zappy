@@ -1,0 +1,17 @@
+{
+    "disabled": true,
+    "loggers": [
+        {
+            "ID": "default",
+            "disabled": true
+        },
+        {
+            "ID": "debug",
+            "disabled": true
+        },
+        {
+            "ID": "error",
+            "disabled": true
+        }
+    ]
+}

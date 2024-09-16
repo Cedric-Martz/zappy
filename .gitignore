@@ -1,0 +1,24 @@
+# GLOBAL
+*.idea
+.vscode
+*.txt
+*.log
+vgcore.*
+zappy_ref-2-0-2
+zappy_server
+zappy_gui
+zappy_ai
+notation
+
+# GUI
+/Assets
+currentScene.png
+MenuBackground.png
+
+# AI
+/config
+/wordlist
+/logs
+
+# SERVER
+execute_zappy.sh
