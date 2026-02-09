@@ -699,23 +699,23 @@ namespace rl
         Vector3 direction = Vector3Normalize(camera.target - camera.position);
 
         if (k.isKeyDown(static_cast<KeyboardKey>(keys["downKey"]))) {
-            camera.position = camera.position + direction * -moveSpeed;
-            camera.target = camera.target + direction * -moveSpeed;
+            camera.position = Vector3Add(camera.position, Vector3Scale(direction, -moveSpeed));
+            camera.target = Vector3Add(camera.target, Vector3Scale(direction, -moveSpeed));
         }
         if (k.isKeyDown(static_cast<KeyboardKey>(keys["upKey"]))) {
-            camera.position = camera.position + direction * moveSpeed;
-            camera.target = camera.target + direction * moveSpeed;
+            camera.position = Vector3Add(camera.position, Vector3Scale(direction, moveSpeed));
+            camera.target = Vector3Add(camera.target, Vector3Scale(direction, moveSpeed));
         }
 
         Vector3 right = Vector3Normalize(Vector3CrossProduct(direction, camera.up));
 
         if (k.isKeyDown(static_cast<KeyboardKey>(keys["leftKey"]))) {
-            camera.position = camera.position + right * -moveSpeed;
-            camera.target = camera.target + right * -moveSpeed;
+            camera.position = Vector3Add(camera.position, Vector3Scale(right, -moveSpeed));
+            camera.target = Vector3Add(camera.target, Vector3Scale(right, -moveSpeed));
         }
         if (k.isKeyDown(static_cast<KeyboardKey>(keys["rightKey"]))) {
-            camera.position = camera.position + right * moveSpeed;
-            camera.target = camera.target + right * moveSpeed;
+            camera.position = Vector3Add(camera.position, Vector3Scale(right, moveSpeed));
+            camera.target = Vector3Add(camera.target, Vector3Scale(right, moveSpeed));
         }
 
         if (k.isKeyDown(KEY_SPACE)) {

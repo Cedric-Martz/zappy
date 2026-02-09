@@ -29,7 +29,7 @@ namespace rl
 
     bool SoundSource::isReady()
     {
-        return IsSoundReady(_sound);
+        return IsSoundValid(_sound);
     }
 
     void SoundSource::open()
