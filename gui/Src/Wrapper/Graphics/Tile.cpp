@@ -7,6 +7,8 @@
 
 #include "Tile.hpp"
 
+#include <algorithm>
+
 namespace rl
 {
     Tile::Tile()

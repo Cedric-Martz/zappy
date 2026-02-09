@@ -8,6 +8,8 @@
 #include "Keyboard.hpp"
 #include "InputText.hpp"
 
+#include <algorithm>
+
 namespace rl
 {
     InputText::InputText(
@@ -53,7 +55,9 @@ namespace rl
         _text.draw();
 
         if (_isActive && _cursorVisible) {
-            Vector2 trueTextPos = _text.getPosition2() - (_text.getSize() / 2.0f);
+            const Vector2 textSize = _text.getSize();
+            const Vector2 halfTextSize{textSize.x / 2.0f, textSize.y / 2.0f};
+            Vector2 trueTextPos = _text.getPosition2() - halfTextSize;
             unsigned int fontSize = _text.getCharacterSize();
             float cursorX = trueTextPos.x + MeasureText(_text.getString().substr(0, _cursorPos).c_str(), fontSize);
             DrawLine(cursorX, trueTextPos.y, cursorX, trueTextPos.y + fontSize + 8, BLACK);
@@ -182,12 +186,12 @@ namespace rl
         bool isRejected = false;
 
         if (!_accepted.empty())
-            isAccepted = std::find(_accepted.begin(), _accepted.end(), c) != _accepted.end();
+            isAccepted = std::find(_accepted.begin(), _accepted.end(), static_cast<char>(c)) != _accepted.end();
         else if (c >= 32 && c <= 125)
             isAccepted = true;
 
         if (!_rejected.empty())
-            isRejected = std::find(_rejected.begin(), _rejected.end(), c) != _rejected.end();
+            isRejected = std::find(_rejected.begin(), _rejected.end(), static_cast<char>(c)) != _rejected.end();
 
         return isAccepted && !isRejected;
     }

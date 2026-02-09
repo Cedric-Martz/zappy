@@ -9,28 +9,13 @@
     #define B_YEP_400_STG_4_1_ZAPPY_AUGUSTIN_GROSNON_VECTOR_HPP
     #include "RayLib.hpp"
 
-bool operator==(const Vector2 &a, const Vector2 &b);
-bool operator!=(const Vector2 &a, const Vector2 &b);
-Vector2 operator+(const Vector2 &a, const Vector2 &b);
-Vector2 operator-(const Vector2 &a, const Vector2 &b);
-Vector2 operator*(const Vector2 &a, const Vector2 &b);
-Vector2 operator/(const Vector2 &a, const Vector2 &b);
-Vector2 operator*(const Vector2 &a, const float scale);
-Vector2 operator/(const Vector2 &a, const float scale);
 bool operator<(const Vector2 &a, const Vector2 &b);
 bool operator>(const Vector2 &a, const Vector2 &b);
-bool operator==(const Vector3 &a, const Vector3 &b);
-bool operator!=(const Vector3 &a, const Vector3 &b);
-Vector3 operator+(const Vector3 &a, const Vector3 &b);
-Vector3 operator-(const Vector3 &a, const Vector3 &b);
-Vector3 operator*(const Vector3 &a, const float scale);
 bool operator<(const Vector3 &a, const Vector3 &b);
 bool operator>(const Vector3 &a, const Vector3 &b);
 
 std::ostream &operator<<(std::ostream &s, const Vector2 &vec);
 std::ostream &operator<<(std::ostream &s, const Vector3 &vec);
-Vector3 operator*(const Vector3 &vec, const Matrix &matrix);
-
 class Vec3Wrapper {
 public:
     static float distanceSquared(const Vector3 &a, const Vector3 &b);

@@ -26,7 +26,7 @@ namespace rl
 
     bool MusicSource::isReady()
     {
-        return IsMusicReady(_music);
+        return IsMusicValid(_music);
     }
 
     void MusicSource::open()
